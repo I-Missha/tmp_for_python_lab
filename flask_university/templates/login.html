@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход в систему</title>
+</head>
+<body>
+    <h1>Вход в систему</h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST">
+        <p>
+            <label>Логин:</label><br>
+            <input type="text" name="username" required>
+        </p>
+        <p>
+            <label>Пароль:</label><br>
+            <input type="password" name="password" required>
+        </p>
+        <p>
+            <button type="submit">Войти</button>
+        </p>
+    </form>
+    
+    <p><a href="/">На главную</a> | <a href="/register">Регистрация</a></p>
+</body>
+</html>

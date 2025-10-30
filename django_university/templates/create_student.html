@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Создать студента</title>
+</head>
+<body>
+    <h1>Создать студента</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Создать студента">
+    </form>
+    <br>
+    <a href="/student/">Назад к списку студентов</a>
+</body>
+</html>

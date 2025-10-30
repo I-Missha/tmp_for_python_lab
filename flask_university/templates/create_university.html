@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать университет</title>
+</head>
+<body>
+    <h1>Создать университет</h1>
+    
+    <form method="POST">
+        <p>
+            <label>Полное название:</label><br>
+            <input type="text" name="full_name" required>
+        </p>
+        <p>
+            <label>Сокращенное название:</label><br>
+            <input type="text" name="short_name" required>
+        </p>
+        <p>
+            <label>Дата создания:</label><br>
+            <input type="date" name="creation_date" required>
+        </p>
+        <p>
+            <button type="submit">Создать</button>
+        </p>
+    </form>
+    
+    <p><a href="/universities">Назад к списку</a></p>
+    <p><a href="/">На главную</a></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Университеты и студенты</title>
+</head>
+<body>
+    <h1>Система управления университетами и студентами</h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    {% if 'user' in session %}
+        <p>Привет, {{ session['user'] }}! <a href="/logout">Выйти</a></p>
+    {% else %}
+        <p><a href="/login">Войти</a> | <a href="/register">Регистрация</a></p>
+    {% endif %}
+    
+    <h2>Меню</h2>
+    <ul>
+        <li><a href="/universities">Университеты</a></li>
+        <li><a href="/students">Студенты</a></li>
+        {% if 'user' in session %}
+            <li><a href="/universities/create">Создать университет</a></li>
+            <li><a href="/students/create">Создать студента</a></li>
+        {% endif %}
+    </ul>
+</body>
+</html>

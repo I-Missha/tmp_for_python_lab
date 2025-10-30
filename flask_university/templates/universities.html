@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Университеты</title>
+</head>
+<body>
+    <h1>Список университетов</h1>
+    
+    {% if universities %}
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Полное название</th>
+                <th>Сокращенное название</th>
+                <th>Дата создания</th>
+            </tr>
+            {% for university in universities %}
+                <tr>
+                    <td>{{ university.id }}</td>
+                    <td>{{ university.full_name }}</td>
+                    <td>{{ university.short_name }}</td>
+                    <td>{{ university.creation_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Нет университетов в базе</p>
+    {% endif %}
+    
+    <p><a href="/">На главную</a></p>
+    {% if 'user' in session %}
+        <p><a href="/universities/create">Создать университет</a></p>
+    {% endif %}
+</body>
+</html>

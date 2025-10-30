@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать студента</title>
+</head>
+<body>
+    <h1>Создать студента</h1>
+    
+    <form method="POST">
+        <p>
+            <label>ФИО:</label><br>
+            <input type="text" name="full_name" required>
+        </p>
+        <p>
+            <label>Дата рождения:</label><br>
+            <input type="date" name="birth_date" required>
+        </p>
+        <p>
+            <label>Университет:</label><br>
+            <select name="university_id" required>
+                <option value="">Выберите университет</option>
+                {% for university in universities %}
+                    <option value="{{ university.id }}">{{ university.short_name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label>Год поступления:</label><br>
+            <input type="number" name="enrollment_year" min="1900" max="2030" required>
+        </p>
+        <p>
+            <button type="submit">Создать</button>
+        </p>
+    </form>
+    
+    <p><a href="/students">Назад к списку</a></p>
+    <p><a href="/">На главную</a></p>
+</body>
+</html>
